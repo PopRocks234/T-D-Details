@@ -335,7 +335,7 @@
   <section class="section" id="contact">
     <h2>Book Your Appointment</h2>
     <div class="calendly-container">
-      <!-- Replace with your actual Calendly link -->
+      <https://calendly.com/tdddetails -->
       <div class="calendly-inline-widget" 
            data-url="https://calendly.com/your-calendly-link" 
            style="min-width:320px;height:630px;"></div>
@@ -402,7 +402,7 @@
 </html>
   
   <script src="js/scripts.js"></script>
-https://calendly.com/app/availability/schedules
+
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
