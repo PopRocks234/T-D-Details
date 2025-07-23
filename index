@@ -337,7 +337,7 @@
     <div class="calendly-container">
       <https://calendly.com/tdddetails -->
       <div class="calendly-inline-widget" 
-           data-url="https://calendly.com/your-calendly-link" 
+           data-url="https://calendly.com/tdddetails" 
            style="min-width:320px;height:630px;"></div>
     </div>
     <p class="calendar-note">Live availability shown - we come to you in Rhode Island!</p>
