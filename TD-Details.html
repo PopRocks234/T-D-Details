@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>T&D Details | Mobile Auto Detailing in RI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #111;
+      --secondary: #d4af37;
+      --text: #333;
+      --light: #f9f9f9;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo-container {
+      height: 60px;
+    }
+    .logo {
+      height: 100%;
+      width: auto;
+      max-width: 180px;
+      transition: transform 0.3s ease;
+    }
+    .logo:hover {
+      transform: scale(1.05);
+    }
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--secondary);
+    }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .hero {
+      text-align: center;
+      padding: 5rem 1rem;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                  url('https://images.unsplash.com/photo-1602332250027-b7c2d5e190ab') center/cover no-repeat;
+      color: white;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    .cta-button {
+      background-color: var(--secondary);
+      color: var(--primary);
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .cta-button:hover {
+      background-color: white;
+      transform: translateY(-2px);
+    }
+    .section {
+      padding: 3rem 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+    .section h2::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: var(--secondary);
+      margin: 0.5rem auto 0;
+    }
+    .services ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .services li {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .services li:hover {
+      transform: translateY(-5px);
+    }
+    .services li strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+    .services li p {
+      margin: 0.5rem 0;
+    }
+    .services li em {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    .service-icon {
+      font-size: 1.5rem;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+    .condition-note {
+      color: #666;
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+      padding-top: 0.5rem;
+      border-top: 1px dashed #ddd;
+    }
+    /* Calendly Styling */
+    .calendly-container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      margin: 0 auto;
+      max-width: 900px;
+    }
+    .calendly-inline-widget {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .calendar-note {
+      text-align: center;
+      color: #666;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      background-color: var(--primary);
+      color: white;
+    }
+    .footer-content {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      text-align: left;
+    }
+    .footer-section h3 {
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .social-links a {
+      color: white;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+    .social-links a:hover {
+      color: var(--secondary);
+    }
+    .copyright {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 1rem;
+      }
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+      }
+      nav.show {
+        display: flex;
+      }
+      nav a {
+        margin: 0.5rem 0;
+        text-align: center;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .logo-container {
+        height: 50px;
+      }
+      .logo {
+        max-width: 150px;
+      }
+      .hero {
+        padding: 3rem 1rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .services ul {
+        grid-template-columns: 1fr;
+      }
+      .calendly-inline-widget {
+        height: 700px !important;
+      }
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="#">
+        <img src="logo.png" alt="T&D Details Logo - Mobile Auto Detailing in Rhode Island" class="logo">
+      </a>
+    </div>
+    <button class="mobile-menu-btn" id="menuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav id="mainNav">
+      <a href="#services">Services</a>
+      <a href="#contact">Book Now</a>
+      <a href="https://www.instagram.com/tddetailss" target="_blank">Instagram</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Professional Mobile Auto Detailing</h1>
+    <p>Wash & Wax • Exterior • Interior — We come to you throughout Rhode Island!</p>
+    <a href="#contact" class="cta-button">Book Your Appointment</a>
+  </section>
+
+  <section class="section services" id="services">
+    <h2>Our Services & Pricing</h2>
+    <ul>
+      <li>
+        <div class="service-icon">
+          <i class="fas fa-car"></i>
+        </div>
+        <strong>Exterior Wash</strong>
+        <p>Shampoo wash, hand wash, clean exterior glass, clean & shine tires/wheels, and wax.</p>
+        <p>$40 (Sedan/Coupe) | $50 (SUV/Truck) <br><em>~40 minutes</em></p>
+      </li>
+      <li>
+        <div class="service-icon">
+          <i class="fas fa-broom"></i>
+        </div>
+        <strong>Maintenance Interior & Exterior Detail</strong>
+        <p>Vacuum, interior dust/clean, clean doorjambs, exterior wash, and wax.</p>
+        <p>$85 (Sedan/Coupe) | $95 (SUV) | $105 (Large SUV/Truck) <br><em>~1 hour</em></p>
+        <p class="condition-note"><em>*Pricing based on average condition. Additional charges may apply for pet hair, excessive trash/dirt. Final price adjusted upon inspection.</em></p>
+      </li>
+      <li>
+        <div class="service-icon">
+          <i class="fas fa-vacuum"></i>
+        </div>
+        <strong>Full Interior Detail</strong>
+        <p>Deep steam vacuum, full wipe down, clean windows, clean seats, wash & clean rubber mats, clean doorjambs.</p>
+        <p>$85 (Sedan/Coupe) | $90 (SUV) | $100 (Large SUV/Truck) <br><em>~1 hour</em></p>
+        <p class="condition-note"><em>*Pricing based on average condition. Additional charges may apply for pet hair, excessive trash/dirt. Final price adjusted upon inspection.</em></p>
+      </li>
+      <li>
+        <div class="service-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <strong>Wash / Clay / Protection</strong>
+        <p>Exterior wash, decontaminate paint, apply sealant, clean & shine tires, clean doors.</p>
+        <p>$100 (Sedan/Coupe) | $120 (SUV) | $135 (Large SUV/Truck)</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Book Your Appointment</h2>
+    <div class="calendly-container">
+      <!-- Replace with your actual Calendly link -->
+      <div class="calendly-inline-widget" 
+           data-url="https://calendly.com/your-calendly-link" 
+           style="min-width:320px;height:630px;"></div>
+    </div>
+    <p class="calendar-note">Live availability shown - we come to you in Rhode Island!</p>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>Phone: (401) 555-1234</p>
+        <p>Email: info@tddetails.com</p>
+      </div>
+      <div class="footer-section">
+        <h3>Service Area</h3>
+        <p>Serving all of Rhode Island</p>
+        <p>Mobile service - we come to you!</p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="https://www.instagram.com/tddetailss" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="#" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 T&D Details — Professional Mobile Auto Detailing in Rhode Island</p>
+    </div>
+  </footer>
+
+  <!-- Calendly Embed Script -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mainNav = document.getElementById('mainNav');
+    
+    menuBtn.addEventListener('click', () => {
+      mainNav.classList.toggle('show');
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
