@@ -81,6 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (calendlyButtons.length > 0) {
     calendlyButtons.forEach(button => {
       button.addEventListener('click', initCalendly);
+<button data-calendly-trigger>Book Now</button>
     });
   }
 
@@ -93,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       // Add your form validation logic here
       console.log('Form submitted');
+      <script src="js/scripts.js"></script>
     });
   }
 });
